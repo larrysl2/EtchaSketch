@@ -5,12 +5,14 @@
     align-items: center;
     border-style: dotted;
     flex:1;
+    margin: 10px;
 }
 #board
 {
   display:body;
   height:960px;
   width:960px;
-  border-style: solid;
+  outline :1px solid black;
   
 }
+
