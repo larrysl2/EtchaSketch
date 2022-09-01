@@ -1,9 +1,12 @@
 const button = document.querySelector(".button");
 button.addEventListener("click", adddivs);
+const clean = document.querySelector(".clear");
+clean.addEventListener("click", clear);
 let numberofsquares =0;
 let counter =0;
 function adddivs (j) 
 {
+    
     // parameters are function squaresize and prompt which will get user input and ss will calculate square sizes
  // create a new div element
     let x=0;
@@ -44,14 +47,10 @@ function adddivs (j)
                 const container = document.getElementsByClassName("divcontainer"+i); 
                 container[0].appendChild(smalldivs); //append divs to collection //add ss to container
                 const hover = document.getElementsByClassName("smalldivs"); 
+
         }
     }
-    let smallsquares = document.querySelectorAll(".smalldivs")
-    smallsquares.forEach(smalldivs => {
-        smalldivs.addEventListener('mouseenter', function() { 
-            smalldivs.style.background = 'black';
-        })
-    })
+    hover();
     
  }
 function squaresize()
@@ -59,3 +58,22 @@ function squaresize()
 	let hxw = 960/numberofsquares;
 	return hxw;
 }
+function hover()
+{
+    let smallsquares = document.querySelectorAll("span.smalldivs")
+    smallsquares.forEach(smalldivs => {
+        smalldivs.addEventListener('mouseenter', function() { 
+            smalldivs.style.background = 'black';
+        })
+    })
+}
+function clear()
+{
+    let grid = document.querySelectorAll("span.smalldivs");
+    
+    grid.forEach(smalldivs => {
+            // smalldivs.classList.remove("smalldivs");
+            smalldivs.style.background = 'white';
+        })
+}
+
